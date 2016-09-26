@@ -1,4 +1,23 @@
 extends ../core/page
 
+block title
+  title Vhost Generator
+
 block content
-  h1 Hello world
+  +section('settings')
+    form
+      +input('text', 'settings', {label: "Output directory", helper: "Helper text"})
+      
+  
+  +section('header')
+    button Settings
+    h1 Vhost Generator
+  
+  - var base = ".testing.testing.com"
+  +section('vhosts')
+    div.vhost
+      h2
+        input.vhost__name 
+        span !{base}
+      div.vhost__data
+        input.vhost__directory(type="file" webkitdirectory)

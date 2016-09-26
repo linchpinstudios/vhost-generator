@@ -1,0 +1,15 @@
+mixin section( sectionName )
+  section(class!=sectionName)
+    div.container
+      div.row
+        block
+
+
+mixin input(inputType, masterClass, options)
+  - options = typeof options == 'undefined' ? {} : options;
+  div(class="#{masterClass}__input-wrap")
+    - if ( typeof options.label != 'undefined' )
+      label(class="#{masterClass}__label") #{options.label}
+    - if ( typeof options.helper != 'undefined' )
+      div(class="#{masterClass}__helper-text") #{options.helper}
+    input(class="#{masterClass}__input" type=inputType)
