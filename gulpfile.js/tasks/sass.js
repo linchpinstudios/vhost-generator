@@ -12,7 +12,7 @@ gulp.task('build:sass', function() {
     ];
 
     return gulp.src( config.sass.src )
-        .pipe( sass() )
+        .pipe( sass().on('error', sass.logError) )
         .pipe( postcss(processors) )
         .pipe( gulp.dest( config.sass.build ) );
 });

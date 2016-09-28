@@ -4,20 +4,30 @@ block title
   title Vhost Generator
 
 block content
-  +section('settings')
+  +section('settings-section')
     form
       +input('text', 'settings', {label: "Output directory", helper: "Helper text"})
       
   
   +section('header')
-    button Settings
-    h1 Vhost Generator
+    button.button.settings Settings
+    h1.header__title Vhost Generator
   
   - var base = ".testing.testing.com"
   +section('vhosts')
+    button.button.highlight.add-host +
+  
     div.vhost
-      h2
-        input.vhost__name 
+      h2.vhost__title
+        span.vhost__name.clean(contenteditable="true" placeholder="awesome-sauce")
         span !{base}
       div.vhost__data
-        input.vhost__directory(type="file" webkitdirectory)
+        input.vhost__directory(type="file" webkitdirectory directory)
+    
+    div.vhost
+      h2.vhost__title
+        span.vhost__name.clean(contenteditable="true" placeholder="awesome-sauce")
+        span !{base}
+      div.vhost__data
+        input.vhost__directory(type="file" webkitdirectory directory)
+    

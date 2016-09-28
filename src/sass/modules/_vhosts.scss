@@ -1,0 +1,31 @@
+.vhosts {
+  background: #CFD8DC;
+  padding: 0;
+}
+
+.vhost {
+  border-bottom: 2px solid #B0BEC5;
+  padding: 1em;
+
+  &__title {
+    outline: 0;
+    margin: 0 0 1em 0;
+  }
+
+  &__name {
+    display: inline-block;
+    outline: 0;
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    border-bottom: 1px solid $primary;
+    color: #263238;
+    font-weight: 500;
+    font-size: 1em;
+
+    &.clean {
+      color: rgba(#263238, .5);
+    }
+  }
+}

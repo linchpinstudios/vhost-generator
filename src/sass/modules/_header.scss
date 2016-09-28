@@ -1,0 +1,11 @@
+.header {
+  background: $primary;
+  padding-top: 3rem;
+  padding-bottom: 1rem;
+
+  &__title {
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 500;
+  }
+}
