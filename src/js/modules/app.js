@@ -1,4 +1,4 @@
-let FilePickers = require('./file-picker');
+let FilePicker = require('./file-picker');
 
 // base application
 class App {
@@ -8,7 +8,14 @@ class App {
   }
 
   enableFilePickers() {
-    this.pickers = new FilePickers('file-picker', 'selector', 'output');
+    this.pickerList = [];
+    let filePickers = document.querySelectorAll( '.file-picker' );
+
+    for ( let item of filePickers ) {
+      let picker = new FilePicker( item, 'selector', 'output' );
+      this.pickerList.push( picker );
+    }
+
   }
 }
 

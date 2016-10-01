@@ -1,36 +1,40 @@
 class FilePicker {
-  constructor( wrapperClass, pickerClass, inputClass ) {
-    this.wrapperClass = "." + wrapperClass;
-    this.pickerClass = "." + pickerClass;
-    this.inputClass = "." + inputClass;
+  constructor( wrapperElement, pickerClass, outputClass ) {
+    this.wrapper = wrapperElement;
+    this.selector = this.wrapper.querySelectorAll( "." + pickerClass )[0];
+    this.output = this.wrapper.querySelectorAll( "." + outputClass )[0];
 
     this.init();
   }
 
   init() {
-    let pickerList = this.getPickers();
+    console.log('picker init');
+    this.addEvents();
 
-    for ( let picker of pickerList ) {
-      this.addEvents( picker );
-    }
   }
 
   /*
-  * @return: a list of elements with the designated picker class
-  */
-  getPickers() {
-    return document.querySelectorAll( this.wrapperClass );
-  }
-
-  /*
-  * @return: a list of elements with the designated picker class
+  * Add events
   */
   addEvents( wrapper ) {
-    let picker = wrapper.querySelectorAll( this.pickerClass )[0];
-    let input = wrapper.querySelectorAll( this.inputClass )[0];
-
-    picker.addEventListener('change', () => { input.value = picker.files[0].path });
+    this.selector.addEventListener('change', this.updateOutputValue );
   }
+
+  /*
+  * Remove events
+  */
+  removeEvents( wrapper ) {
+    this.selector.removeEventListener('change', this.updateOutputValue );
+  }
+
+  /*
+  * Update the value of the output to be the selected file path
+  */
+  updateOutputValue() {
+    this.output.value = this.selector.files[0].path;
+    this.removeEvents();
+  }
+
 }
 
 module.exports = FilePicker;
