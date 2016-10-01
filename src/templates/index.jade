@@ -17,19 +17,11 @@ block content
   +section('vhosts')
     button.button.highlight.add-host +
   
-    div.vhost
+    .vhost
       input.host-name
       h2.vhost__title
         span.vhost__name.clean(contenteditable="true" placeholder="awesome-sauce")
         span !{base}
-      div.vhost__data
-        input.host-dir-picker.vhost__directory(type="file" webkitdirectory directory)
-        input.host-dir
-    
-    div.vhost
-      h2.vhost__title
-        span.vhost__name.clean(contenteditable="true" placeholder="awesome-sauce")
-        span !{base}
-      div.vhost__data
-        input.vhost__directory(type="file" webkitdirectory directory)
-    
+      .file-picker.vhost__data
+        input.selector.vhost__directory(type="file" webkitdirectory directory)
+        input.output.host-dir

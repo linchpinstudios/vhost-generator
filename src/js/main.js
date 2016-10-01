@@ -1,3 +1,4 @@
-let FilePicker = require('./modules/file-picker');
-
-let picker = new FilePicker();
+(function() {
+  let App = require('./modules/app');
+  let app = new App();
+})();
