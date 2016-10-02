@@ -1,26 +1,26 @@
 class FilePicker {
-  constructor( wrapperElement, pickerClass, outputClass ) {
-    this.wrapper = wrapperElement;
-    this.selector = this.wrapper.querySelectorAll( "." + pickerClass )[0];
-    this.output = this.wrapper.querySelectorAll( "." + outputClass )[0];
+  constructor( selector, output ) {
+    this.selector = selector;
+    this.output = output;
     this.init();
   }
 
   init() {
+    console.log("picker init");
     this.addEvents();
   }
 
   /*
   * Add events
   */
-  addEvents( wrapper ) {
+  addEvents() {
     this.selector.addEventListener('change', this.updateOutputValue.bind(this) );
   }
 
   /*
   * Remove events
   */
-  removeEvents( wrapper ) {
+  removeEvents() {
     this.selector.removeEventListener('change', this.updateOutputValue.bind(this) );
   }
 
