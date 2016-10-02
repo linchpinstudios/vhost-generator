@@ -9,7 +9,8 @@
 
   &__title {
     outline: 0;
-    margin: 0 0 1em 0;
+    margin: 0 0 .5em 0;
+    font-size: 2em;
   }
 
   &__name {
@@ -27,5 +28,23 @@
     &.clean {
       color: rgba(#263238, .5);
     }
+  }
+
+  &__selector-label {
+    font-size: .7rem;
+    width: 10%;
+  }
+
+  &__selector {
+    display: none;
+  }
+
+  &__output {
+    border: 0;
+    background: none;
+    font-size: 1rem;
+    color: #607D8B;
+    width: 90%;
+    padding-left: .75em;
   }
 }

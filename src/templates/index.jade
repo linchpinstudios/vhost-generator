@@ -23,5 +23,7 @@ block content
         span.vhost__name.clean(contenteditable="true" placeholder="awesome-sauce")
         span !{base}
       .file-picker.vhost__data
-        input.selector.vhost__directory(type="file" webkitdirectory directory)
-        input.output.host-dir
+        label.button.vhost__selector-label(for="1") Points to:
+        input.selector.vhost__selector(id="1" name="file" type="file" webkitdirectory directory)
+        //- label(for="file") Points to
+        input.output.vhost__output(value="/user/test/cool")
