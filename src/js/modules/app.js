@@ -1,4 +1,4 @@
-let FilePicker = require('./file-picker');
+let PickerManger = require('./file-picker-manager');
 
 // base application
 class App {
@@ -7,15 +7,28 @@ class App {
     this.enableFilePickers();
   }
 
-  enableFilePickers() {
-    this.pickerList = [];
-    let filePickers = document.querySelectorAll( '.file-picker' );
+  /*
+   * Generate a list of file pickers
+   */
+  enableFilePickers( reset ) {
+    if ( typeof this.pickerList == 'undefined' || reset ) {
+      this.filePickerList = [];
+      let filePickers = document.querySelectorAll( '.file-picker' );
+    }
 
     for ( let item of filePickers ) {
       let picker = new FilePicker( item, 'selector', 'output' );
-      this.pickerList.push( picker );
+      this.filePickerList.push( picker );
     }
+  }
 
+  /*
+   * Disable all file pickers 
+   */
+  disableFilePickers() {
+    for ( picker of this.filePickerList ) {
+      picker.
+    }
   }
 }
 
