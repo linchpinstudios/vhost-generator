@@ -3,28 +3,25 @@ class FilePicker {
     this.wrapper = wrapperElement;
     this.selector = this.wrapper.querySelectorAll( "." + pickerClass )[0];
     this.output = this.wrapper.querySelectorAll( "." + outputClass )[0];
-
     this.init();
   }
 
   init() {
-    console.log('picker init');
     this.addEvents();
-
   }
 
   /*
   * Add events
   */
   addEvents( wrapper ) {
-    this.selector.addEventListener('change', this.updateOutputValue );
+    this.selector.addEventListener('change', this.updateOutputValue.bind(this) );
   }
 
   /*
   * Remove events
   */
   removeEvents( wrapper ) {
-    this.selector.removeEventListener('change', this.updateOutputValue );
+    this.selector.removeEventListener('change', this.updateOutputValue.bind(this) );
   }
 
   /*
