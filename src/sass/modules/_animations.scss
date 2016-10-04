@@ -1,0 +1,18 @@
+@keyframes slideDown {
+  0% {
+    max-height: 0px;
+  }
+
+  100% {
+    max-height: 500px;
+  }
+}
+@keyframes slideUp {
+  0% {
+    max-height: 500px;
+  }
+
+  100% {
+    max-height: 0px;
+  }
+}

@@ -5,12 +5,26 @@ block title
 
 block content
   +section('settings-section')
-    form
-      +input('text', 'settings', {label: "Output directory", helper: "Helper text"})
+    .settings-section__inner.section
+      form
+        .input-wrap
+          h2
+            label.label Where do you want to store your vhost config files?
+          .file-picker.vhost__data
+            label.button.vhost__selector-label(for="1") How about...
+            input.selector.vhost__selector(id="1" name="file" type="file" webkitdirectory directory)
+            //- label(for="file") Points to
+            input.output.vhost__output(value="/user/test/cool")
+        
+        .settings-section__secondary
+          h4 Additional options
+          div.input-wrap
+            label Port:
+            input.input(type="number" placeholder="80" value="80")
       
   
   +section('header')
-    button.button.settings Settings
+    button.button.settings.settings-button Settings
     h1.header__title Vhost Generator
   
   - var base = ".testing.testing.com"

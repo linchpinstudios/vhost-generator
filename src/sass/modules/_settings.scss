@@ -1,4 +1,45 @@
 .settings-section {
-  background: $highlight;
-  display: none;
+  background: #eee;
+  color: #263238;
+  animation-name: slideUp;
+  animation-duration: .5s;
+  max-height: 0px;
+  overflow: hidden;
+  padding: 0;
+
+  &.open {
+    animation-name: slideDown;
+    max-height: none;
+  }
+
+  &__secondary {
+    margin-top:1.5em;
+  }
+
+  label {
+
+  }
+
+  .helper-text {
+    font-size: .8em;
+    line-height: 1.4;
+    margin-bottom: .5em;
+    color: lighten
+  }
+
+  .input-wrap {
+    margin-bottom: .5em;
+  }
+
+  input {
+    background: none;
+    border: 0;
+    margin: 0;
+    font-size: 1em;
+    font-weight: 300;
+
+    &.large {
+      font-size: 1.5em;
+    }
+  }
 }

@@ -23,7 +23,8 @@
   }
 
   &.settings {
-    background: $highlight;
+    background: #eee;
+    color: $primary;
     position: absolute;
     right: 1em;
     top: 0;
@@ -31,7 +32,7 @@
     text-transform: uppercase;
 
     &:hover, &:active {
-      background: lighten($highlight, 10%);
+      background: darken(#eee, 10%);
     }
   }
 
