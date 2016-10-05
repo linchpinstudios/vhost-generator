@@ -9,12 +9,12 @@ block content
       form
         .input-wrap
           h2
-            label.label Where do you want to store your vhost config files?
+            label.label vhost output directory
           .file-picker.vhost__data
-            label.button.vhost__selector-label(for="1") How about...
-            input.selector.vhost__selector(id="1" name="file" type="file" webkitdirectory directory)
+            label.button.vhost__selector-label(for="2") How about...
+            input.selector.vhost__selector(id="2" name="file" type="file" webkitdirectory directory)
             //- label(for="file") Points to
-            input.output.vhost__output(value="/user/test/cool")
+            input.output.vhost__output(placeholder="/yo/mamas/house/")
         
         .settings-section__secondary
           h4 Additional options
