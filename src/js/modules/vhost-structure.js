@@ -10,7 +10,8 @@ class Vhost {
 
     let wrap = document.createElement('div');
     wrap.setAttribute('data-id', pickerId);
-    wrap.className = "vhost";
+    let freshClass = !this.options.hostName || !this.options.path ? " fresh" : "";
+    wrap.className = "vhost" + freshClass;
 
     let hiddenInput = document.createElement('input')
     hiddenInput.className = "host-name";
@@ -102,7 +103,9 @@ class Vhost {
   }
 
   render( outputLocation ) {
-    outputLocation.appendChild( this.structure );
+    let firstChild = outputLocation.children[0];
+    outputLocation.insertBefore( this.structure, firstChild );
+    // outputLocation.appendChild( this.structure );
   }
 
   destroy( e ) {

@@ -7,6 +7,12 @@
   border-bottom: 2px solid #B0BEC5;
   padding: 1em;
   color: #263238;
+  overflow: hidden;
+
+  &.fresh {
+    animation-duration: 1s;
+    animation-name: slideDown;
+  }
 
   &__delete {
     appearance: none;
@@ -18,6 +24,7 @@
     color: #dd0000;
     margin-top: 1em;
     outline: 0;
+    cursor: pointer;
   }
 
   &__title {

@@ -60,7 +60,6 @@ class App {
     // this.pickerManager.disablePickers();
 
     for( let i = 0, n = hosts.length; i < n; i++ ) {
-      console.log(hosts[i]);
       let vhost = new Vhost(this.baseUrl, i, hosts[i]);
       vhost.render( this.output );
       this.count = i;
