@@ -30,14 +30,5 @@ block content
   - var base = ".testing.testing.com"
   +section('vhosts')
     button.button.highlight.add-host +
-  
-    .vhost
-      input.host-name(type="hidden")
-      h2.vhost__title
-        span.vhost__name.clean(contenteditable="true" placeholder="awesome-sauce")
-        span !{base}
-      .file-picker.vhost__data
-        label.button.vhost__selector-label(for="1") Points to:
-        input.selector.vhost__selector(id="1" name="file" type="file" webkitdirectory directory)
-        //- label(for="file") Points to
-        input.output.vhost__output(value="/user/test/cool")
+    
+    #vhosts
