@@ -32,12 +32,13 @@
     padding: 0;
     margin: 0;
     border: 0;
-    border-bottom: 1px dashed $primary;
+    border-bottom: 1px dashed $highlight;
     color: #263238;
     font-weight: 500;
     font-size: 1em;
 
     &.clean {
+      border-bottom: 1px dashed $primary;
       color: rgba(#263238, .5);
     }
   }

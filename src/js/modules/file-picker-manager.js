@@ -17,12 +17,9 @@ class FilePickerManager {
    * Collect pickers and start them
    */
   init() {
-    console.log("picker manager init");
     let pickerWrappers = this.getPickers();
-    console.log(pickerWrappers);
 
     for ( let wrapper of pickerWrappers ) {
-      console.log(wrapper);
       this.addPicker( wrapper );
     }
   }

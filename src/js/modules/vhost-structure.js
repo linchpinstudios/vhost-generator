@@ -1,6 +1,12 @@
 
 class Vhost {
-  constructor( baseUrl, pickerId ) {
+  constructor( baseUrl, pickerId, options ) {
+    var defaults = {
+      hostName: false,
+      path: false
+    }
+
+    this.options = typeof options == "undefined" ? defaults : options;
 
     let wrap = document.createElement('div');
     wrap.setAttribute('data-id', pickerId);
@@ -31,9 +37,16 @@ class Vhost {
     title.className = "vhost__title";
 
     let vhostName = document.createElement('span');
-    vhostName.className = "vhost__name clean";
+    let vhostNameClass = "vhost__name";
     vhostName.setAttribute('contenteditable', 'true');
-    vhostName.setAttribute("placeholder", this.getPlaceholder());
+    if ( this.options.hostName != false ) {
+      vhostName.innerHTML = this.options.hostName;
+    }
+    else {
+      vhostName.setAttribute("placeholder", this.getPlaceholder());
+      vhostNameClass += " clean";
+    }
+    vhostName.className = vhostNameClass;
 
     let baseUrlElement = document.createElement('span');
     baseUrlElement.innerHTML = "." + baseUrl;
@@ -63,7 +76,12 @@ class Vhost {
 
     let output = document.createElement('input');
     output.className = "output vhost__output";
-    output.setAttribute('placeholder', '/that/one/folder/');
+    if ( this.options.path != false ) {
+      output.value = this.options.path;
+    }
+    else {
+      output.setAttribute('placeholder', '/that/one/folder/');
+    }
 
     wrap.appendChild(label);
     wrap.appendChild(picker);
@@ -75,10 +93,10 @@ class Vhost {
   getPlaceholder() {
     var examples = [
       "awesome-sauce",
-      "plain-sauce",
+      "plain-ol-sauce",
       "not-into-this-sauce",
       "saucerer",
-      "secret-sauce"
+      "secret-sauce",
     ]
     return examples[Math.floor(Math.random()*examples.length)];
   }

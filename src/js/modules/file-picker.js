@@ -6,7 +6,6 @@ class FilePicker {
   }
 
   init() {
-    console.log("picker init");
     this.addEvents();
   }
 

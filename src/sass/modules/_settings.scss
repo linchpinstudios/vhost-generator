@@ -1,11 +1,14 @@
 .settings-section {
   background: #eee;
   color: #263238;
-  animation-name: slideUp;
   animation-duration: .5s;
   max-height: 0px;
   overflow: hidden;
   padding: 0;
+
+  &.closed {
+    animation-name: slideUp;
+  }
 
   &.open {
     animation-name: slideDown;

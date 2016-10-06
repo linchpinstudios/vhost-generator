@@ -41,12 +41,12 @@ class App {
   getHosts() {
     return [
       {
-        hostName: "AwesomeSauce",
+        hostName: "CoolProject",
         path: "/user/projects/awesome-sauce-incorporated/"
       },
       {
-        hostName: "AwesomeSauce",
-        path: "/user/projects/awesome-sauce-incorporated/"
+        hostName: "NotSoCoolProject",
+        path: "/user/projects/less-awesome-sauce.biz/"
       }
     ];
   }
@@ -60,7 +60,8 @@ class App {
     // this.pickerManager.disablePickers();
 
     for( let i = 0, n = hosts.length; i < n; i++ ) {
-      let vhost = new Vhost(this.baseUrl, i);
+      console.log(hosts[i]);
+      let vhost = new Vhost(this.baseUrl, i, hosts[i]);
       vhost.render( this.output );
       this.count = i;
     }

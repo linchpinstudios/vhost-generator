@@ -18,10 +18,12 @@ class Settings {
   toggleSettings() {
     if ( this.isClosed || typeof this.isClosed == 'undefined' ) {
       this.settingsSection.classList.add('open');
+      this.settingsSection.classList.remove('closed');
       this.isClosed = false;
     }
     else {
       this.settingsSection.classList.remove('open');
+      this.settingsSection.classList.add('closed');
       this.isClosed = true;
     }
   }
