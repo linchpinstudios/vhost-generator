@@ -41,12 +41,12 @@ class App {
   getHosts() {
     return [
       {
-        hostName: "CoolProject",
-        path: "/user/projects/awesome-sauce-incorporated/"
-      },
-      {
         hostName: "NotSoCoolProject",
         path: "/user/projects/less-awesome-sauce.biz/"
+      },
+      {
+        hostName: "CoolProject",
+        path: "/user/projects/awesome-sauce-incorporated/"
       }
     ];
   }

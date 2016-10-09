@@ -21,5 +21,9 @@ module.exports = {
         src: [src + 'api/**/*.js'],
         build: build,
         buildName: 'index.js'
+    },
+
+    unitTests: {
+      src: ['tests/**/*.js']
     }
 }
