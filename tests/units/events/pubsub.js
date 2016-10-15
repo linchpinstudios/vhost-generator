@@ -1,10 +1,11 @@
+import {pubsub} from '../src/js/events/pubsub';
+
+var testEvent = 'TEST_EVENT';
 
 describe("PubSub", function() {
-  var a;
+  it("Subscribe should return an unsubscribe method", function() {
+    var subscription = pubsub.subscribe(testEvent, function(message, data) {});
 
-  it("and so is a spec", function() {
-    a = true;
-
-    expect(a).toBe(false);
+    expect(subscription).toBe(false);
   });
 });

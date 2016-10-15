@@ -6,6 +6,9 @@ var apiGulp = require('./api');
 var jadeGulp = require('./jade');
 var jsGulp = require('./js');
 var sassGulp = require('./watch');
+var testsGulp = require('./jasmine');
+
+gulp.task('default', ['build:api', 'build:sass', 'build:js', 'build:jade']);
 
 gulp.task('watch', function() {
     watch(config.api.src, function() { gulp.start('build:api') });

@@ -24,6 +24,7 @@ module.exports = {
     },
 
     unitTests: {
+      entry: ['tests/index.js'],
       src: ['tests/**/*.js']
     }
 }
