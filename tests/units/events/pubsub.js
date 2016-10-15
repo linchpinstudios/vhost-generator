@@ -1,4 +1,5 @@
-describe("A suite is just a function", function() {
+
+describe("PubSub", function() {
   var a;
 
   it("and so is a spec", function() {

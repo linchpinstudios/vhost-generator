@@ -4,5 +4,5 @@ var jasmine = require('gulp-jasmine');
 
 gulp.task('runTests', function() {
   return gulp.src(config.unitTests.src)
-    .pipe( jasmine());
+    .pipe( jasmine() );
 });
