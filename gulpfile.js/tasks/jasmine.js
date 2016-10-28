@@ -5,11 +5,11 @@ var watch = require('gulp-watch');
 
 var js = require('./js');
 
-gulp.task('tests', ['build:js'], function() {
+gulp.task('test', function() {
   return gulp.src(config.unitTests.entry)
     .pipe( jasmine() );
 });
 
-gulp.task('watch:tests', ['build:js'], function() {
-  watch(config.js.src, function() { gulp.start('tests') });
+gulp.task('watch:test', ['build:js'], function() {
+  watch(config.js.src, function() { gulp.start('test') });
 });
